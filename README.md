@@ -22,6 +22,9 @@ and then CD into the project and run
 ```bash
 go run . --domain pexels.com
 ```
+## Project Overview Through a Diagram
+
+![](./Diagram/Health-checker.png)
 
 ## Usage
 
