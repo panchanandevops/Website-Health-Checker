@@ -10,11 +10,13 @@ import (
 )
 
 func main() {
+
 	// Define the command-line application
 	app := &cli.App{
 		Name:  "Healthchecker",
 		Usage: "A tiny tool that checks the given domain is down.",
 		Flags: []cli.Flag{
+
 			// Define the domain flag
 			&cli.StringFlag{
 				Name:     "domain",
@@ -22,6 +24,7 @@ func main() {
 				Usage:    "Domain name to check.",
 				Required: true,
 			},
+
 			// Define the port flag
 			&cli.StringFlag{
 				Name:     "port",
@@ -31,11 +34,13 @@ func main() {
 			},
 		},
 		Action: func(c *cli.Context) error {
+
 			// Extract values from flags or use defaults
 			port := c.String("port")
 			if c.String("port") == "" {
 				port = "80"
 			}
+
 			// Call the Check function and print the result
 			status := Check(c.String("domain"), port)
 			fmt.Println(status)
